@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amos Ndonga .NET Developer Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --dotnet-purple: #512bd4;
+        --azure-blue: #0078d4;
+        --deep-dark: #0f0f0f;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .responsive-image {
+        max-width: 600px;
+        max-height: 400px;
+        width: 100%;
+        height: auto;
+      }
+      .hero {
+        background: #1a1a1a;
+        color: white;
+        padding: 120px 0;
+        border-bottom: 5px solid var(--dotnet-purple);
+      }
+      .accent-text {
+        color: var(--dotnet-purple);
+        font-weight: bold;
+      }
+      .skill-card {
+        border: none;
+        transition: transform 0.3s;
+        background: #fdfdfd;
+        border-top: 4px solid var(--dotnet-purple);
+      }
+      .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        height: 250px;
+        background: #eee;
+      }
+      .gallery-item img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        transition: 0.3s;
+      }
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        background: rgba(81, 43, 212, 0.9);
+        color: white;
+        width: 100%;
+        padding: 15px;
+        transform: translateY(100%);
+        transition: 0.3s;
+      }
+      .gallery-item:hover .gallery-overlay {
+        transform: translateY(0);
+      }
+      .tech-badge {
+        background: #e9ecef;
+        color: #495057;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        margin: 3px;
+        display: inline-block;
+        border: 1px solid #dee2e6;
+      }
+
+      /* Portfolio Cards */
+      .card {
+        border: none;
+        border-radius: 12px;
+        transition: 0.3s;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+      .hover-up:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      .badge-skill {
+        background: #f0ebff;
+        color: var(--dotnet-purple);
+        border: 1px solid #dcd1ff;
+        margin-right: 5px;
+      }
+
+      .hire-me-section {
+        background: #ffffff;
+        padding: 80px 0;
+      }
+      .contact-card {
+        background: var(--deep-dark);
+        color: white;
+        border-radius: 15px;
+        padding: 40px;
+        height: 100%;
+      }
+      .form-control {
+        padding: 12px;
+        border: 1px solid #dee2e6;
+      }
+      .form-control:focus {
+        border-color: var(--dotnet-purple);
+        box-shadow: 0 0 0 0.25rem rgba(81, 43, 212, 0.1);
+      }
+
+      .btn-dotnet {
+        background: var(--dotnet-purple);
+        color: white;
+        transition: 0.3s;
+        padding: 12px 30px;
+        border-radius: 8px;
+      }
+      .btn-dotnet:hover {
+        background: #4020a8;
+        color: white;
+        transform: translateY(-2px);
+      }
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">AMOS NDONGA</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#skills">Tech Stack</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#portfolio">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#hire-me">Hire Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero text-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold">
+          Full Stack <span class="accent-text">.NET CORE/C#</span> Developer
+        </h1>
+
+        <p class="lead mb-4">
+          Specializing in Cloud-Native Apps, Blazor Web, Backend, Database and
+          MAUI Cross-Platform Development, and UI/UX.
+        </p>
+        <div class="d-flex justify-content-center gap-2">
+          <span class="tech-badge bg-secondary text-white">C#</span>
+          <span class="tech-badge bg-dark text-white">.NET CORE</span>
+          <span class="tech-badge bg-primary text-white">Azure</span>
+          <span class="tech-badge bg-dark text-white">Docker</span>
+          <span class="tech-badge bg-info text-white">CI/CD</span>
+          <span class="tech-badge bg-secondary text-white">Git/GitHub</span>
+          <span class="tech-badge bg-warning text-white">SQL</span>
+          <span class="tech-badge bg-info text-white">OpenTelemetry</span>
+          <span class="tech-badge bg-primary text-white">Goland</span>
+          <span class="tech-badge bg-info text-white">Terraform</span>
+        </div>
+      </div>
+    </header>
+
+    <section id="skills" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5 fw-bold">Skills & Tech Stack</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 skill-card p-4">
+              <i class="fas fa-mobile-alt fa-3x mb-3 text-primary"></i>
+              <h4>Mobile & Desktop</h4>
+              <p>
+                Proficient with Native cross-platform development using
+                <strong>MAUI</strong> and <strong>XAML</strong>. Desktop
+                solutions with WPF.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 skill-card p-4">
+              <i class="fas fa-code fa-3x mb-3 text-success"></i>
+              <h4>Web & Backend & Database</h4>
+              <p>
+                Expertise in <strong>C#</strong>, <strong>Blazor</strong>, and
+                <strong>Go (Golang)</strong> for high-performance microservices.
+                Proficient with <strong>SQL/NOSQL</strong> and
+                <strong>Systems design</strong>.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 skill-card p-4">
+              <i class="fas fa-cloud fa-3x mb-3 text-info"></i>
+              <h4>Cloud & DevOps</h4>
+              <p>
+                Expertise in Containerization with <strong>Docker</strong>,
+                <strong>Azure</strong> cloud services,
+                <strong>Terraform</strong> and
+                <strong>Git & CI/CD</strong> pipelines.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="py-5 bg-light">
+      <div class="container">
+        <h3 class="text-center fw-bold mb-5">Featured Projects</h3>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 hover-up">
+              <img
+                src="pos.jpeg"
+                class="card-img-top responsive-image"
+                alt="Project"
+              />
+              <img
+                src="accounts.jpeg"
+                class="card-img-top responsive-image"
+                alt="Project"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Inventory Management System</h5>
+                <p class="card-text small text-muted">
+                  A Blazor WebAssembly app with ASP.NET Core backend, MYSQL
+                  Database, deployed on Azure App Services.
+                </p>
+                <p>Three Clients already using it.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 hover-up">
+              <img
+                src="app.png"
+                class="card-img-top responsive-image"
+                alt="Project"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-bold">
+                  Inventory Management Mobile App
+                </h5>
+                <p class="card-text small text-muted">
+                  Mobile application utilizing MAUI, XAML and C#.
+                </p>
+                <p>Three Clients already using it.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 hover-up">
+              <img src="goland.jpeg" class="card-img-top" alt="Project" />
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Receipt generator service</h5>
+                <p class="card-text small text-muted">
+                  A Golang service that generates receipts documents.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hire-me" class="hire-me-section bg-light">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <div class="contact-card shadow-lg">
+              <h2 class="fw-bold mb-4">Let's build something amazing.</h2>
+              <p class="opacity-75 mb-5">
+                Currently available for full-time roles or high-impact contract
+                projects, Azure cloud solutions, and Mobile development.
+              </p>
+
+              <div class="d-flex align-items-center mb-4">
+                <div class="icon-box me-3">
+                  <i class="fas fa-envelope fa-lg text-info"></i>
+                </div>
+                <div>
+                  <h6 class="mb-0">Email Me</h6>
+                  <p class="mb-0 opacity-75">amosndonga@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mb-4">
+                <div class="icon-box me-3">
+                  <i class="fas fa-phone fa-lg text-info"></i>
+                </div>
+                <div>
+                  <h6 class="mb-0">Phone</h6>
+                  <p class="mb-0 opacity-75">+254 702240787</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mb-4">
+                <div class="icon-box me-3">
+                  <i class="fas fa-location-dot fa-lg text-info"></i>
+                </div>
+                <div>
+                  <h6 class="mb-0">Location</h6>
+                  <p class="mb-0 opacity-75">Nairobi, Kenya</p>
+                </div>
+              </div>
+
+              <hr class="my-4 opacity-25" />
+
+              <h6 class="mb-3 text-uppercase small tracking-widest">
+                Connect with me
+              </h6>
+              <div class="d-flex gap-3">
+                <a
+                  href="https://www.linkedin.com/in/amos-ndonga-762339115/"
+                  class="text-white fs-4"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="https://github.com/amosn593" class="text-white fs-4"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a href="https://x.com/amosn593" class="text-white fs-4"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
+              <h3 class="fw-bold mb-4 text-dark">Send a Message</h3>
+              <form action="#" method="POST">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder=""
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder=""
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label small fw-bold">Subject</label>
+                    <select class="form-select form-control">
+                      <option>Full-time Opportunity</option>
+                      <option>Contract Project</option>
+                      <option>Consulting/Code Review</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label small fw-bold">Message</label>
+                    <textarea
+                      class="form-control"
+                      rows="5"
+                      placeholder="Tell me about your project..."
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-dotnet w-100 fw-bold">
+                      Send Proposal
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-5">
+      <div class="container">
+        <p class="mb-2">Ready to start a project?</p>
+        <a href="#hire-me" class="btn btn-dotnet fw-bold mb-3">Hire Me Today</a>
+        <p class="text-secondary small">
+          &copy; Amos Ndonga. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
